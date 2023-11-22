@@ -1,8 +1,8 @@
 {
-  //Handles the babel transpile step. preset-env handles ES6 -> CommonJs
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ]
+	//Handles the babel transpile step. preset-env handles ES6 -> CommonJs
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-react",
+		"@babel/preset-typescript"
+	]
 }
