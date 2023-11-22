@@ -1,9 +1,9 @@
 import * as React from "react";
-import "./App.css";
+import styles from "./App.module.css";
 
 const App: React.FC<{}> = (props) => {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <h1>Hello, world!!!!</h1>
     </div>
   );
