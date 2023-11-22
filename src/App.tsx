@@ -1,10 +1,11 @@
 import * as React from "react";
 import styles from "./App.module.css";
+import TodoList from "./todos/TodoList";
 
 const App: React.FC<{}> = (props) => {
 	return (
 		<div className={styles.App}>
-			<h1>Hello, world!!!!</h1>
+			<TodoList todos={["Item"]} />
 		</div>
 	);
 };
