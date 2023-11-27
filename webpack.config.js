@@ -7,9 +7,18 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.(ts|tsx)?$/,
+				use: [
+					{
+						loader: "ts-loader",
+					},
+				],
+				exclude: /(node_modules)/,
+			},
+			{
 				test: /\.(js|jsx)$/,
 				exclude: /(node_modules)/,
-				loader: "bable-loader",
+				loader: "babel-loader",
 				options: {
 					presets: ["@babel/env"],
 				},
@@ -18,14 +27,8 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 					{ loader: "style-loader" },
-					{ loader: "css-modules-typescript-loader" },
 					{ loader: "css-loader", options: { modules: true } },
 				],
-			},
-			{
-				test: /\.(ts|tsx)?$/,
-				use: "ts-loader",
-				exclude: /(node_modules)/,
 			},
 		],
 	},
@@ -38,6 +41,9 @@ module.exports = {
 		filename: "bundle.js",
 	},
 	devServer: {
+		static: {
+			directory: path.join(__dirname, "public"),
+		},
 		compress: true,
 		port: 3000,
 		open: true,
