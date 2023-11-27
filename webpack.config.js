@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const typescriptDeclarationPlugin = require("typescript-declaration-webpack-plugin");
 
 module.exports = {
 	entry: "./src/index.tsx",
@@ -48,5 +49,8 @@ module.exports = {
 		port: 3000,
 		open: true,
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin()],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new typescriptDeclarationPlugin(),
+	],
 };
